@@ -14,7 +14,7 @@ def send_request(req: str) -> str:
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system",
-                "content": "Your work is to create a command for the zsh shell that fulfills a given request. You shall answer in one line, containing only the generated command that achieves the user's request. The command may use pipes (|), redirections (>, <, >>, <<, >>>, etc.), logical operators (&&, ||, etc.), background execution (&) and other features that zsh provides if necessary."},
+                "content": "Your work is to create a command for a generic Unix shell that fulfills a given request. You shall answer in one line, containing only the generated command that achieves the user's request. You may use pipes (|), redirections (>, <, >>, <<, >>>, etc.), logical operators (&&, ||, etc.), background execution (&) and other features that the shell provides if necessary. You may also use any generic commands that a Unix system may provide. If the user specifies to use a certain command(s), you must use them in your response."},
             {"role": "user", "content": f"Generate a command that does the following: {req}"}
         ]
     )
